@@ -11,8 +11,9 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 require(tidyverse)
-require(tidyverse)
+require(tigerstats)
 require(knitr)
+source(file ="BrLw.R")
 ```
 
 
@@ -35,9 +36,33 @@ There are 3 questions and there should be at least 3 separate commits, at least 
 
 <!--Decide on your methods:  In this section explain the approach you will take to attack the issue --- how will you decide on a likely estimate of professor Brownlow's earnings or losses after 637 bets. Also explain how you construct a 95% confidence interval about your estimate of his winnings !-->
 
+```{r}
+BrLw(35,4.35,637)
+```
+
+
+```{r}
+bank=numeric()
+for(j in 1:500){
+  
+  
+
+bank[j] = BrLw(35,4.35,637)}
+```
+
+```{r}
+hist(bank)
+favstats(bank)
+arranged<-sort(bank)
+print(arranged[12])
+print(arranged[488])
+```
+
+The number that Brownlows should bet is $4.35.We know this because the zero is in the middle of the barplot, meaning the bet of 4.35 reached the fair odds. the min is -181.55, meaning he can either win or lose with this bet, further supporting that this number reached the fair odds.
 
 # What size of class makes the 2:1 bet fair?  
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
+
 
 
 # In the class and payoff as described what is a 95% confidence interval for Brownlow's earnings?
