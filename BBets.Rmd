@@ -72,7 +72,7 @@ bank=numeric()
 for(j in 1:1000){
 
 
-bank[j] = BrLw(35,4.35,637)}
+bank[j] = BrLw(35,4.30,637)}
 ```
 
 ```{r}
@@ -83,17 +83,38 @@ print(arranged[25])
 print(arranged[975])
 ```
 
-Based on the histogram it seems as thought Browlows owe would need to be to make the the class size with the 2:1 raito is 4.30. The zeor is centered in the histogram. This is confirmed by the Min which is at about the -170 range, meaning that Brownlow can either win or lose.
+Based on the histogram it seems as thought Browlows owe would need to be to make the the class size with the 2:1 raito is 4.30. The zero is centered in the histogram. This is confirmed by the Min which is at about the -170 range, meaning that Brownlow can either win or lose.
 
 
 # In the class and payoff as described what is a 95% confidence interval for Brownlow's earnings?
   
 <!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlows winnings (or losings)-->
 
+```{r}
+BrLw(29,2,637)
+```
 
+```{r}
+bank=numeric()
+for(j in 1:1000){
+  
+  
+  
+bank[j] = BrLw(29,2,637)} 
+```
 
+```{r}
+hist(bank)
+favstats(bank)
+arranged<-sort(bank)
+print(arranged[12])
+print(arranged[488])
+```
+Since the min is -77 for this histogram is it most likely that Brownlow will end up winning money as opposed to losing money. the zero is a little off to the left meaning that it is more likely brownlow will will money when betting and the odds are in his favor.
 
 # Discussion and Conclusion
 
-<!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
+<!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!--> 
+
+Brownlow can decrease his bets to decrease his winnings, the more he bets the more he wins. The right class size to keep the odds even is 35, we used tham number twice and was successful in finding the balance in the odds. When i uses 29 in the last histogram it was slightly skewed to the left.
 
